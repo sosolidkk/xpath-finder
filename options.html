@@ -11,6 +11,7 @@
       .submit { margin-left: 10px; padding: 5px 10px; background: #f9f9fa; border: 1px solid #ccc; }
       .submit:hover { background: #ebebeb; cursor: pointer; }
       .status { padding:10px; color: #008000; min-height: 40px; }
+      .table { margin-left:auto; margin-right:auto; padding: 2px 2px; border: 1px solid; }
     </style>
   </head>
   <body>
@@ -45,6 +46,13 @@
         </div>
         <div class="status"></div>
         <button type="submit" class="submit">Save options</button>
+    </form>
+    <form>
+        <button type="submit" class="submit" id="finalizar">Send xPath (MiD)</button>
+        ID: <input type="number" name="fluxid" >
+    </form>
+    <form>
+        <button type="submit" class="submit" id="clear">Clear Storage</button>
     </form>
     <script src="options.js"></script>
   </body>

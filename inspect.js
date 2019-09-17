@@ -21,6 +21,17 @@ var xPathFinder = xPathFinder || (() => {
       if (e.target.id !== this.contentNode) {
         const XPath = this.getXPath(e.target);
         this.XPath = XPath;
+
+// ----------------------------------------------------
+      chrome.storage.local.get({xPathArr: []}, function(data) {
+        console.log(data.xPathArr);
+        data.xPathArr.push(XPath);
+        chrome.storage.local.set({xPathArr: data.xPathArr}, function() {
+          console.log("Adding: " + XPath);
+        })
+      })
+// ----------------------------------------------------
+
         const contentNode = document.getElementById(this.contentNode);
         if (contentNode) {
           contentNode.innerText = XPath;
